@@ -1,9 +1,11 @@
-
+import NavBar from "./NavBar";
 
 function App() {
 
   return (
-    <h1>Hello</h1>
+    <div>
+      <NavBar/>
+    </div>
   )
 }
 
