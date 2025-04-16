@@ -13,7 +13,14 @@ export default function Hero() {
         <p className="description">
           I love building full-stack apps, solving complex problems, and helping ideas
           come to life through code. Currently, I am an incoming Software Engineering Intern
-          at <span>Zebra Technologies.</span>
+          at <a
+                href="https://www.zebra.com/us/en/software.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="highlight-link"
+                >
+                Zebra Technologies
+                </a>
         </p>
 
         <div className="buttons">
