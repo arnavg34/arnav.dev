@@ -33,6 +33,13 @@ export default function NavBar(){
               Projects
           </div>
         </button>
+        <button className="resume-button"
+         onClick={() => window.open("/arnav.pdf", "_blank")}
+        >
+          <div className="icon-text">
+              <h1>Resume</h1>
+          </div>
+        </button>
       </div>
     );
   };

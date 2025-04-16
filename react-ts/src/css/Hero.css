@@ -1,17 +1,158 @@
 .outer {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+margin-top: 40px;
+padding: 0 5vw;
 }
+
 .about {
-    flex: 3;
-    justify-content: flex-start;
+flex: 3;
+margin-top: 100px;
+max-width: 600px;
 }
+
 .photo {
-    flex: 1;
-    margin-top: 125px;
-    margin-right: 100px;
+flex: 1;
+margin-top: 100px;
+text-align: center;
 }
+
 img {
-    border-radius: 200px;
+border-radius: 50%;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+max-width: 100%;
+height: auto;
+}
+
+.intro {
+font-size: 1.25rem;
+margin-bottom: 0.5rem;
+}
+
+.h1-hero {
+font-size: 2.5rem;
+margin-bottom: 0.5rem;
+}
+
+.h2-hero {
+font-size: 1.75rem;
+margin-bottom: 1rem;
+}
+
+.description {
+font-size: 1rem;
+color: #333;
+margin-bottom: 2rem;
+}
+
+span {
+    color: #18453B;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: #18453B;
+    transition: width 0.3s ease-in-out;
+}
+  
+span:hover::after {
+    width: 100%;
+}
+.buttons {
+display: flex;
+flex-direction: column;
+gap: 2rem;
+}
+
+.socials {
+display: flex;
+flex-wrap: wrap;
+gap: 2rem;
+}
+
+.icon-text {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+
+.social-button-github,.social-button-linkedin,.social-button-gmail,.check-button   {
+font-family: inherit;
+font-size: 1.2rem;
+padding: 10px 20px;
+border: none;
+border-radius: 12px;
+cursor: pointer;
+transition: all 0.3s ease-in-out;
+}
+
+.social-button-github {
+background-color: #333;
+color: white;
+}
+
+.social-button-linkedin {
+background-color: #0077B5;
+color: white;
+}
+
+.social-button-gmail {
+background-color: #c71610;
+color: white;
+}
+
+.social-button-github:hover {
+background-color: #444;
+transform: scale(1.1);
+}
+
+.social-button-linkedin:hover {
+background-color: #005c99;
+transform: scale(1.1);
+}
+
+.social-button-gmail:hover {
+background-color: #a30e0a;
+transform: scale(1.1);
+}
+
+.check-button {
+background-color: #18453B;
+color: white;
+font-size: 2.5rem;
+padding: 25px 40px;
+}
+
+.check-button:hover {
+background-color: #0f2f25;
+transform: scale(1.1);
+}
+.about-me {
+    margin-top: 30px;
+}
+@media (max-width: 768px) {
+.outer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about,
+.photo {
+    margin: 40px 0;
+}
+
+.socials {
+    justify-content: center;
+}
 }
