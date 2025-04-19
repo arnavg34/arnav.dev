@@ -3,4 +3,4 @@ export function scrollToSection(id: string) {
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' })
     }
-  }
+}

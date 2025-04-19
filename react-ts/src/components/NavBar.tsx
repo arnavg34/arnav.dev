@@ -27,12 +27,17 @@ export default function NavBar() {
                 </div>
               </button>
             </Link>
+            <Link
+              to="/journey"
+              onClick={() => scrollToSection('about')}
+            >
           <button className="nav-button">
             <div className="icon-text">
               <RouteIcon color="white" size={24}/>
               My Journey
             </div>
           </button>
+          </Link>
           <button className="nav-button">
             <div className="icon-text">
               <Code color="white" size={24}/>
