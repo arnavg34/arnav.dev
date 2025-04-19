@@ -3,14 +3,9 @@ import arnav from "../assets/arnav.jpg";
 import { FaArrowDown, FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { SiZebratechnologies } from "react-icons/si";
-import NavBar from "./NavBar";
-import { Link } from "@tanstack/react-router";
-import { scrollToSection } from "../assets/utils/scroll";
 
-export default function Hero() {
+export default function About() {
    return (
-    <>
-    <NavBar />
      <div className="outer">
        <div className="about">
          <p className="intro">Hi, my name is</p>
@@ -19,14 +14,15 @@ export default function Hero() {
          <p className="description">
            I love building full-stack apps, solving complex problems, and helping ideas
            come to life through code. Currently, I am a Project Director at the largest software club at MSU, <a
-            href="https://www.linkedin.com/company/imaginemsu/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="highlight-link"
-            >
-            Imagine Software.
-            </a>
+                 href="https://www.linkedin.com/company/imaginemsu/"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="highlight-link"
+                 >
+                 Imagine Software.
+                 </a>
          </p>
+ 
          <div className="buttons">
            <div className="socials">
              <button
@@ -55,17 +51,16 @@ export default function Hero() {
            </div>
  
            <div className="about-me">
-            <Link
-              to="/about"
-              onClick={() => scrollToSection('about')}
-            >
-             <button className="check-button">
+             <button
+               className="check-button"
+               onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+             >
                <div className="icon-text">Check out my work <FaArrowDown /></div>
              </button>
-             </Link>
            </div>
          </div>
        </div>
+ 
        <div className="photo">
          <img src={arnav} alt="Arnav Gupta headshot" width="600px" />
          <div className="zebra-tagline">
@@ -83,6 +78,5 @@ export default function Hero() {
          </div>
        </div>
      </div>
-     </>
    );
 }

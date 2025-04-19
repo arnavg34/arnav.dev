@@ -1,21 +1,32 @@
-
 import "../css/NavBar.css"
-import { User, Code, Briefcase, MonitorSmartphone} from "lucide-react";
-import { Route as RouteIcon } from "lucide-react";
+import { User, Code, Briefcase, MonitorSmartphone, Route as RouteIcon} from "lucide-react";
+import { Link } from '@tanstack/react-router'
+import { scrollToSection } from "../assets/utils/scroll";
+
 export default function NavBar() {
     return (
         <div className="nav">
           <div className="a-div">
-            <button className="a-button">
-                A
-            </button>
+            <Link
+                to="/"
+                onClick={() => scrollToSection('hero')}
+              >
+              <button className="a-button">
+                  A
+              </button>
+            </Link>
           </div>
-          <button className="nav-button">
-            <div className="icon-text">
-              <User color="white" size={24} />
-              About Me
-            </div>
-          </button>
+            <Link
+              to="/about"
+              onClick={() => scrollToSection('about')}
+            >
+              <button className="nav-button">
+                <div className="icon-text">
+                  <User color="white" size={24} />
+                  About Me
+                </div>
+              </button>
+            </Link>
           <button className="nav-button">
             <div className="icon-text">
               <RouteIcon color="white" size={24}/>

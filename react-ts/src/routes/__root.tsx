@@ -1,16 +1,27 @@
-import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
+import { createRootRoute, Outlet, useLocation } from '@tanstack/react-router'
+import { useEffect } from 'react'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
-import NavBar from "../components/NavBar";
-import Hero from "../components/Hero"
 import "../index.css"
-export const Route = createRootRoute({
-  component: () => (
+
+const RootComponent = () => {
+  const location = useLocation()
+
+  useEffect(() => {
+    const id = location.pathname.slice(1) || 'hero'
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [location.pathname])
+
+  return (
     <>
-    <NavBar />
-    <Hero />
-    {/* <hr />
-    <Outlet /> */}
-    <TanStackRouterDevtools />
-  </>
-  ),
+      <Outlet />
+      <TanStackRouterDevtools />
+    </>
+  )
+}
+
+export const Route = createRootRoute({
+  component: RootComponent,
 })
