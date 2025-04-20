@@ -12,7 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as JourneyImport } from './routes/journey'
-import { Route as AboutImport } from './routes/about'
+import { Route as ExperienceImport } from './routes/experience'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
@@ -23,9 +23,9 @@ const JourneyRoute = JourneyImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const AboutRoute = AboutImport.update({
-  id: '/about',
-  path: '/about',
+const ExperienceRoute = ExperienceImport.update({
+  id: '/experience',
+  path: '/experience',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -46,11 +46,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutImport
+    '/experience': {
+      id: '/experience'
+      path: '/experience'
+      fullPath: '/experience'
+      preLoaderRoute: typeof ExperienceImport
       parentRoute: typeof rootRoute
     }
     '/journey': {
@@ -67,41 +67,41 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/experience': typeof ExperienceRoute
   '/journey': typeof JourneyRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/experience': typeof ExperienceRoute
   '/journey': typeof JourneyRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/experience': typeof ExperienceRoute
   '/journey': typeof JourneyRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/journey'
+  fullPaths: '/' | '/experience' | '/journey'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/journey'
-  id: '__root__' | '/' | '/about' | '/journey'
+  to: '/' | '/experience' | '/journey'
+  id: '__root__' | '/' | '/experience' | '/journey'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
+  ExperienceRoute: typeof ExperienceRoute
   JourneyRoute: typeof JourneyRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
+  ExperienceRoute: ExperienceRoute,
   JourneyRoute: JourneyRoute,
 }
 
@@ -116,15 +116,15 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/about",
+        "/experience",
         "/journey"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/about": {
-      "filePath": "about.tsx"
+    "/experience": {
+      "filePath": "experience.tsx"
     },
     "/journey": {
       "filePath": "journey.tsx"

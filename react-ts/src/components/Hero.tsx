@@ -13,10 +13,10 @@ export default function Hero() {
     <NavBar />
      <div className="outer">
        <div className="about">
-         <p className="intro">Hi, my name is</p>
-         <h1 className="h1-hero">Arnav Gupta.</h1>
-         <h2 className="h2-hero">A Computer Engineering student at Michigan State University.</h2>
-         <p className="description">
+         <p className="intro" data-aos="zoom-in">Hi, my name is</p>
+         <h1 className="h1-hero" data-aos="zoom-in">Arnav Gupta.</h1>
+         <h2 className="h2-hero" data-aos="zoom-in">A Computer Engineering student at Michigan State University.</h2>
+         <p className="description" data-aos="zoom-in">
            I love building full-stack apps, solving complex problems, and helping ideas
            come to life through code. Currently, I am a Project Director at the largest software club at MSU, <a
             href="https://www.linkedin.com/company/imaginemsu/"
@@ -56,8 +56,8 @@ export default function Hero() {
  
            <div className="about-me">
             <Link
-              to="/about"
-              onClick={() => scrollToSection('about')}
+              to="/journey"
+              onClick={() => scrollToSection('journey')}
             >
              <button className="check-button">
                <div className="icon-text">Check out my work <FaArrowDown /></div>
@@ -66,7 +66,7 @@ export default function Hero() {
            </div>
          </div>
        </div>
-       <div className="photo">
+       <div className="photo" data-aos="zoom-in">
          <img src={arnav} alt="Arnav Gupta headshot" width="600px" />
          <div className="zebra-tagline">
            Software Engineering Intern @{" "}

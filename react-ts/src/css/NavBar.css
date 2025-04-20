@@ -5,16 +5,18 @@
     align-items: center;
     margin-top: 10px;
     margin-right: 10px;
-}
-.icon-text {
+  }
+  
+  .icon-text {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-}
-.nav-button {
+  }
+  
+  .nav-button {
     font-family: inherit;
-    color:white ;
+    color: white;
     border: none;
     background: transparent;
     text-align: center;
@@ -23,24 +25,28 @@
     display: inline-block;
     padding: 20px;
     border-radius: 12px;
-    transition: all 0.3s ease-in-out;
     transform: scale(1.05);
-    cursor:pointer;
-}
-.nav-button::after {
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+  }
+  
+  .nav-button::after {
     content: '';
     display: block;
     height: 2px;
     width: 0%;
     background: white;
     transition: width 0.3s;
-}
-.nav-button:hover::after {
+  }
+  
+  .nav-button:hover::after {
     width: 100%;
-}
-.resume-button {
+  }
+  
+  .resume-button {
     font-family: inherit;
-    color:white ;
+    color: white;
     border: 2px solid #10B981;
     background-color: transparent;
     text-align: center;
@@ -49,36 +55,61 @@
     display: inline-block;
     padding: 10px 12px;
     border-radius: 12px;
-    transition: all 0.3s ease-in-out;
     transform: scale(1.05);
-    cursor:pointer;
-}
-.a-button {
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+    animation-delay: 0.5s;
+  }
+  
+  .a-button {
     font-family: inherit;
     border: 2px solid #10B981;
     background-color: transparent;
-    color:white;
+    color: white;
     text-align: center;
     text-decoration: none;
     font-size: 20px;
     display: inline-block;
     border-radius: 50%;
     padding: 25px 40px;
-    transition: all 0.3s ease-in-out;
     transform: scale(1.05);
-    cursor:pointer;
-}
-.a-div {
-    display: flex; 
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+    animation-delay: 0s;
+  }
+  
+  .a-div {
+    display: flex;
     margin-right: auto;
     margin-left: 10px;
     margin-top: 10px;
-}
-.nav-button:hover, .resume-button:hover{
+  }
+  
+  .nav-button:hover,
+  .resume-button:hover {
     transform: scale(1.1);
-}
-
-.a-button:hover {
+  }
+  
+  .a-button:hover {
     background-color: #059669;
     transform: scale(1.1);
-}
+  }
+  
+  .nav-button:nth-of-type(2) { animation-delay: 0.1s; }
+  .nav-button:nth-of-type(3) { animation-delay: 0.2s; }
+  .nav-button:nth-of-type(4) { animation-delay: 0.3s; }
+  .nav-button:nth-of-type(5) { animation-delay: 0.4s; }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

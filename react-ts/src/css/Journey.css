@@ -1,21 +1,29 @@
 .journey-section {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  padding: 2rem;
+  gap: 5rem;
+  padding: 3rem 4vw; 
 }
 
 .journey-header {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: white;
   margin-bottom: 2rem;
+  
+  text-decoration: #6EC4AC underline;
 }
 
 .journey-block {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 2rem;
+  justify-content: space-between;
+  gap: 3rem;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+  padding-inline: 0; 
 }
 
 .journey-block.left {
@@ -29,39 +37,76 @@
 .journey-image-wrapper,
 .journey-text-wrapper {
   flex: 1;
-  min-width: 280px;
+  
 }
 
 .journey-image {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   border-radius: 12px;
   object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.journey-image:hover {
+  transform: scale(1.02);
 }
 
 .journey-header-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-  font-family: inherit;
+  align-items: baseline;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .journey-title {
-  font-size: 1.5rem;
+  position: relative;
+  font-size: 1.6rem;
   color: white;
   font-weight: bold;
-  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
 }
 
+.journey-title::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #6EC4AC;
+  transition: width 0.3s ease-in-out;
+}
+
+.journey-title:hover::after {
+  width: 100%;
+}
 .journey-date {
   font-size: 0.9rem;
   color: #6EC4AC;
-  font-family: inherit;
+  font-weight: 500;
 }
 
 .journey-description {
-  color: white;
-  line-height: 1.6;
-  font-family: inherit;
+  color: #eeeeee;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
+.journey-block.right .journey-image-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

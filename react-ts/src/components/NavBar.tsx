@@ -1,5 +1,5 @@
 import "../css/NavBar.css"
-import { User, Code, Briefcase, MonitorSmartphone, Route as RouteIcon} from "lucide-react";
+import {Code, Briefcase, MonitorSmartphone, Route as RouteIcon} from "lucide-react";
 import { Link } from '@tanstack/react-router'
 import { scrollToSection } from "../assets/utils/scroll";
 
@@ -16,20 +16,15 @@ export default function NavBar() {
               </button>
             </Link>
           </div>
-            <Link
-              to="/about"
-              onClick={() => scrollToSection('about')}
-            >
-              <button className="nav-button">
-                <div className="icon-text">
-                  <User color="white" size={24} />
-                  About Me
-                </div>
-              </button>
-            </Link>
+          <button className="nav-button">
+            <div className="icon-text">
+              <Code color="white" size={24}/>
+              Skills
+            </div>
+          </button>
             <Link
               to="/journey"
-              onClick={() => scrollToSection('about')}
+              onClick={() => scrollToSection('journey')}
             >
           <button className="nav-button">
             <div className="icon-text">
@@ -38,18 +33,17 @@ export default function NavBar() {
             </div>
           </button>
           </Link>
-          <button className="nav-button">
-            <div className="icon-text">
-              <Code color="white" size={24}/>
-              Skills
-            </div>
-          </button>
+          <Link
+              to="/experience"
+              onClick={() => scrollToSection('experience')}
+            >
           <button className="nav-button">
             <div className="icon-text">
               <Briefcase color="white" size={24}/>
               Work Experience
             </div>
           </button>
+          </Link>
           <button className="nav-button">
             <div className="icon-text">
                 <MonitorSmartphone color="white" size={24}/>

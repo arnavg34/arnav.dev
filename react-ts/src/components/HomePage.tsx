@@ -1,6 +1,7 @@
 
 import Journey from "./Journey";
 import Hero from "./Hero";
+import Experience from "./Experience";
 
 
 export default function HomePage() {
@@ -9,11 +10,11 @@ export default function HomePage() {
         <section id="hero">
           <Hero />
         </section>
-        {/* <section id="about" style={{ paddingTop: '200px' }}>
-          <About />
-        </section> */}
         <section id="journey" style={{ paddingTop: '200px' }}>
           <Journey />
+        </section>
+        <section id="experience" style={{ paddingTop: '100px' }}>
+          <Experience />
         </section>
       </>
     )
