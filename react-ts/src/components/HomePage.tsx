@@ -11,7 +11,7 @@ export default function HomePage() {
           <Hero />
         </section>
         <section id="skills" style={{ paddingTop: '100px' }}>
-          <Experience />
+          {/* <Experience /> */}
         </section>
         <section id="journey" style={{ paddingTop: '200px' }}>
           <Journey />
@@ -20,7 +20,7 @@ export default function HomePage() {
           <Experience />
         </section>
         <section id="projects" style={{ paddingTop: '100px' }}>
-          <Experience />
+          {/* <Experience /> */}
         </section>
       </>
     )
