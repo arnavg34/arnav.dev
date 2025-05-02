@@ -2,6 +2,7 @@
 import Journey from "./Journey";
 import Hero from "./Hero";
 import Experience from "./Experience";
+import Projects from "./Projects";
 
 
 export default function HomePage() {
@@ -20,7 +21,7 @@ export default function HomePage() {
           <Experience />
         </section>
         <section id="projects" style={{ paddingTop: '100px' }}>
-          {/* <Experience /> */}
+          <Projects />
         </section>
       </>
     )

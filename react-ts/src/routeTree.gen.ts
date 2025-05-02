@@ -11,11 +11,18 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as ProjectsImport } from './routes/projects'
 import { Route as JourneyImport } from './routes/journey'
 import { Route as ExperienceImport } from './routes/experience'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const ProjectsRoute = ProjectsImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const JourneyRoute = JourneyImport.update({
   id: '/journey',
@@ -60,6 +67,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JourneyImport
       parentRoute: typeof rootRoute
     }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -69,12 +83,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/experience': typeof ExperienceRoute
   '/journey': typeof JourneyRoute
+  '/projects': typeof ProjectsRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/experience': typeof ExperienceRoute
   '/journey': typeof JourneyRoute
+  '/projects': typeof ProjectsRoute
 }
 
 export interface FileRoutesById {
@@ -82,14 +98,15 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/experience': typeof ExperienceRoute
   '/journey': typeof JourneyRoute
+  '/projects': typeof ProjectsRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/experience' | '/journey'
+  fullPaths: '/' | '/experience' | '/journey' | '/projects'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/experience' | '/journey'
-  id: '__root__' | '/' | '/experience' | '/journey'
+  to: '/' | '/experience' | '/journey' | '/projects'
+  id: '__root__' | '/' | '/experience' | '/journey' | '/projects'
   fileRoutesById: FileRoutesById
 }
 
@@ -97,12 +114,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ExperienceRoute: typeof ExperienceRoute
   JourneyRoute: typeof JourneyRoute
+  ProjectsRoute: typeof ProjectsRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ExperienceRoute: ExperienceRoute,
   JourneyRoute: JourneyRoute,
+  ProjectsRoute: ProjectsRoute,
 }
 
 export const routeTree = rootRoute
@@ -117,7 +136,8 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/experience",
-        "/journey"
+        "/journey",
+        "/projects"
       ]
     },
     "/": {
@@ -128,6 +148,9 @@ export const routeTree = rootRoute
     },
     "/journey": {
       "filePath": "journey.tsx"
+    },
+    "/projects": {
+      "filePath": "projects.tsx"
     }
   }
 }
