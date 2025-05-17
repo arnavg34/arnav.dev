@@ -11,12 +11,19 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as SkillsImport } from './routes/skills'
 import { Route as ProjectsImport } from './routes/projects'
 import { Route as JourneyImport } from './routes/journey'
 import { Route as ExperienceImport } from './routes/experience'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const SkillsRoute = SkillsImport.update({
+  id: '/skills',
+  path: '/skills',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const ProjectsRoute = ProjectsImport.update({
   id: '/projects',
@@ -74,6 +81,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsImport
       parentRoute: typeof rootRoute
     }
+    '/skills': {
+      id: '/skills'
+      path: '/skills'
+      fullPath: '/skills'
+      preLoaderRoute: typeof SkillsImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -84,6 +98,7 @@ export interface FileRoutesByFullPath {
   '/experience': typeof ExperienceRoute
   '/journey': typeof JourneyRoute
   '/projects': typeof ProjectsRoute
+  '/skills': typeof SkillsRoute
 }
 
 export interface FileRoutesByTo {
@@ -91,6 +106,7 @@ export interface FileRoutesByTo {
   '/experience': typeof ExperienceRoute
   '/journey': typeof JourneyRoute
   '/projects': typeof ProjectsRoute
+  '/skills': typeof SkillsRoute
 }
 
 export interface FileRoutesById {
@@ -99,14 +115,15 @@ export interface FileRoutesById {
   '/experience': typeof ExperienceRoute
   '/journey': typeof JourneyRoute
   '/projects': typeof ProjectsRoute
+  '/skills': typeof SkillsRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/experience' | '/journey' | '/projects'
+  fullPaths: '/' | '/experience' | '/journey' | '/projects' | '/skills'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/experience' | '/journey' | '/projects'
-  id: '__root__' | '/' | '/experience' | '/journey' | '/projects'
+  to: '/' | '/experience' | '/journey' | '/projects' | '/skills'
+  id: '__root__' | '/' | '/experience' | '/journey' | '/projects' | '/skills'
   fileRoutesById: FileRoutesById
 }
 
@@ -115,6 +132,7 @@ export interface RootRouteChildren {
   ExperienceRoute: typeof ExperienceRoute
   JourneyRoute: typeof JourneyRoute
   ProjectsRoute: typeof ProjectsRoute
+  SkillsRoute: typeof SkillsRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -122,6 +140,7 @@ const rootRouteChildren: RootRouteChildren = {
   ExperienceRoute: ExperienceRoute,
   JourneyRoute: JourneyRoute,
   ProjectsRoute: ProjectsRoute,
+  SkillsRoute: SkillsRoute,
 }
 
 export const routeTree = rootRoute
@@ -137,7 +156,8 @@ export const routeTree = rootRoute
         "/",
         "/experience",
         "/journey",
-        "/projects"
+        "/projects",
+        "/skills"
       ]
     },
     "/": {
@@ -151,6 +171,9 @@ export const routeTree = rootRoute
     },
     "/projects": {
       "filePath": "projects.tsx"
+    },
+    "/skills": {
+      "filePath": "skills.tsx"
     }
   }
 }

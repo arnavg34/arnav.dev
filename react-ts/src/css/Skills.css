@@ -1,0 +1,23 @@
+.skills-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    text-align: center;
+  }
+  
+  .skills-placeholder {
+    color: white;
+    max-width: 600px;
+  }
+  
+  .skills-placeholder h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skills-placeholder p {
+    font-size: 1rem;
+    color: #ccc;
+  }
+  

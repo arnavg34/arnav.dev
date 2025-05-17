@@ -16,12 +16,17 @@ export default function NavBar() {
               </button>
             </Link>
           </div>
+          <Link
+              to="/skills"
+              onClick={() => scrollToSection('skills')}
+            >
           <button className="nav-button">
             <div className="icon-text">
               <Code color="white" size={24}/>
               Skills
             </div>
           </button>
+          </Link>
             <Link
               to="/journey"
               onClick={() => scrollToSection('journey')}
